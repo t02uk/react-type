@@ -1,0 +1,73 @@
+@import "_variables.scss";
+
+.container {
+    border-top: solid 1px $color-dark;
+    border-bottom: solid 1px $color-dark;
+}
+
+.sentence {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: solid 1px transparent;
+    margin-bottom: 1.2em;
+}
+
+.sentence__inputted {
+    color: $color-light;
+}
+
+.sentence__expected {
+    color: $color-dark;
+}
+
+.sentence--next {
+    color: $color-dark;
+    width: 10px;
+    height: 10px;
+    font-size: 50%;
+}
+
+.incorrect-effect-enter {
+    background: $color-damage;
+}
+
+.hit-effect-enter {
+    color: $color-dark;
+    transform-origin: bottom;
+    background: #000;
+    transform: scale(1.5);
+}
+
+.hit-effect-enter.hit-effect-enter-active {
+    color: $color-light;
+    transform: scale(1);
+    background: $color-dark;
+    transition: 150ms ease-in-out;
+}
+
+.switch-effect-enter {
+    transform: skewX(90deg);
+}
+
+.switch-effect-enter.switch-effect-enter-active {
+    transform: skewX(-90deg);
+    transition: 150ms cubic-bezier(0.9, -1, 1, 1.5)
+}
+
+.switch-effect-leave {
+    transform: skewX(-90deg);
+    opacity: 0.4;
+}
+
+.switch-effect-leave.switch-effect-leave-active {
+    transform: skewX(90deg);
+    opacity: 0.01;
+    transition: 250ms cubic-bezier(0.9, -1, 1, 1.5)
+}
+
+.meter {
+    background: $color-light;
+    height: 4px;
+    width: 100%;
+}

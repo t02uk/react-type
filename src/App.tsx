@@ -1,26 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Title from './Title';
+import {useSelector} from "react-redux";
+import {State} from "./redux/scores";
+import Typing from "./Typing";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const phase = useSelector((state: State) => state.phase);
+    const view = phase === 'title' ? (<Title/>) :
+        phase === 'typing' ? (<Typing startedAt={+new Date()}/>) : null
+
+    return (
+        <div className="App">
+            {view}
+        </div>
+    );
 }
 
 export default App;

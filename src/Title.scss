@@ -1,0 +1,26 @@
+@import "_variables.scss";
+
+.title {
+    font-size: 250%;
+}
+
+.title,
+.explanation
+{
+    color: $color-light;
+}
+
+.cursor {
+    animation: blink .5s infinite alternate;
+}
+@keyframes blink {
+    0% { color: #000000 }
+    100% { color: $color-light }
+}
+
+.ranking {
+    text-align: right;
+    margin: 20px auto;
+    width: 200px;
+    color: $color-light;
+}
